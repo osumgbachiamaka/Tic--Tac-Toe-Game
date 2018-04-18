@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Tic-Tac-Toe</string>
+    <string name="tic">Tic</string>
+    <string name="tac">Tac</string>
+    <string name="toe">Toe</string>
+    <string name="think_you_a">Think you are Smart</string>
+    <string name="lets_play">Lets Play</string>
+    <string name="choose_your">Choose your play</string>
+    <string name="choose_your_mode">Choose your play mode</string>
+    <string name="intro">Game of the mind</string>
+    <string name="play">Start Playing</string>
+    <string name="mode">mode</string>
+    <string name="hard">Hard</string>
+    <string name="easy">Easy</string>
+    <string name="you">You</string>
+    <string name="ai">AI</string>
+    <string name="increase">+ Board \n to 5</string>
+</resources>
