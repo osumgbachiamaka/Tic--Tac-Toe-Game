@@ -63,7 +63,7 @@ public class PlayinghardHard extends Activity{
         setContentView(R.layout.playinghardhard);
 
 
-        boolean mGameType = getIntent().getExtras().getBoolean("gameTypes");
+        boolean mGameType = getIntent().getExtras().getBoolean("gameType");
         // Initialize the buttons
         // Log.d("BoardSize", "Board size is initialized"+ mGame.getBOARDS_SIZE());
         // mBoardButtons = new Button[mGame.getBOARDS_SIZE()];
@@ -164,13 +164,12 @@ public class PlayinghardHard extends Activity{
             mBoardButtons[i].setText("");
             mBoardButtons[i].setEnabled(true);
             mBoardButtons[i].setOnClickListener(new PlayinghardHard.ButtonClickListener(i));
-            mBoardButtons[i].setBackgroundDrawable(getResources().getDrawable(R.drawable.blank));
         }
 
 
         if (mIsSinglePlayer) {
-            youText.setText("Human:");
-            aiText.setText("Android:");
+            youText.setText("You:");
+            aiText.setText("A I:");
 
             if (mPlayerOneFirst) {
                 mInfoTextView.setText("You Play First");
@@ -223,17 +222,20 @@ public class PlayinghardHard extends Activity{
                             mInfoTextView.setText("Your Turn");
                         else if (winner == 1) {
                             textView.setText("Draw");
+                            textView.setTextColor(getResources().getColor(R.color.tic));
                             mTieCounter++;
                             playAgain();
                             mGameOver = true;
                         } else if (winner == 2) {
                             textView.setText("You Won");
+                            textView.setTextColor(getResources().getColor(R.color.white));
                             mPlayerOneCounter++;
                             myScoreText.setText(Integer.toString(mPlayerOneCounter));
                             playAgain();
                             mGameOver = true;
                         } else {
                             textView.setText("AI Won");
+                            textView.setTextColor(getResources().getColor(R.color.red));
                             mPlayerTwoCounter++;
                             myAiText.setText(Integer.toString(mPlayerTwoCounter));
                             playAgain();
@@ -257,11 +259,13 @@ public class PlayinghardHard extends Activity{
                             }
                         } else if (winner == 1) {
                             textView.setText("Draw");
+                            textView.setTextColor(getResources().getColor(R.color.tic));
                             playAgain();
                             mTieCounter++;
                             mGameOver = true;
                         } else if (winner == 2) {
                             textView.setText("Player one wins");
+                            textView.setTextColor(getResources().getColor(R.color.colorAccent));
                             mPlayerOneCounter++;
                             myScoreText.setText(Integer.toString(mPlayerOneCounter));
                             playAgain();
@@ -269,6 +273,7 @@ public class PlayinghardHard extends Activity{
                             mIsPlayerOneTurn = false;
                         } else {
                             textView.setText("Player two wins");
+                            textView.setTextColor(getResources().getColor(R.color.toe));
                             mPlayerTwoCounter++;
                             myAiText.setText(Integer.toString(mPlayerTwoCounter));
                             playAgain();
